@@ -1,0 +1,6 @@
+Gerdemann\GoogleIndex\Service\IndexingService:
+  arguments:
+    1:
+      object:
+        factoryObjectName: Flowpack\GoogleApiClient\Service\ClientFactory
+        factoryMethodName: create

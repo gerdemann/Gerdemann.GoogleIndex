@@ -1,0 +1,18 @@
+Flowpack:
+  GoogleApiClient:
+    applicationName: 'rezepte-indexing'
+Neos:
+  Neos:
+    modules:
+      'management':
+        submodules:
+          'googleIndex':
+            label: 'Google Index'
+            controller: 'Gerdemann\GoogleIndex\Controller\Module\IndexController'
+            description: 'Send pages to google.'
+            icon: 'icon-star'
+    userInterface:
+      translation:
+        autoInclude:
+          Gerdemann.GoogleIndex:
+            - 'Main'

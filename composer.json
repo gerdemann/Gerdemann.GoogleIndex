@@ -1,0 +1,16 @@
+{
+    "name": "gerdemann/googleindex",
+    "type": "neos-package",
+    "description": "Send pages to google for indexing",
+    "require": {
+        "neos/neos": "^7.0",
+        "neos/fusion": "^7.0",
+        "neos/fusion-afx": "^7.0",
+        "flowpack/googleapiclient": "~1.2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Gerdemann\\GoogleIndex\\": "Classes"
+        }
+    }
+}

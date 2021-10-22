@@ -1,0 +1,11 @@
+privilegeTargets:
+  'Neos\Neos\Security\Authorization\Privilege\ModulePrivilege':
+    'Gerdemann.GoogleIndex:BackendModule':
+      matcher: 'management/googleIndex'
+
+roles:
+  'Neos.Neos:Editor':
+    privileges:
+      -
+        privilegeTarget: 'Gerdemann.GoogleIndex:BackendModule'
+        permission: GRANT

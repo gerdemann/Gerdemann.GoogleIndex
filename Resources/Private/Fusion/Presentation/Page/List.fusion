@@ -1,0 +1,58 @@
+prototype(Gerdemann.GoogleIndex:Page.List) < prototype(Neos.Fusion:Component) {
+    // API
+    pages = ${[]}
+    paginationLinks = ${[]}
+
+    // Implementation
+    translationTitle = ${Translation.translate('title', '', [], 'Main', 'Gerdemann.GoogleIndex')}
+    translationLink = ${Translation.translate('link', '', [], 'Main', 'Gerdemann.GoogleIndex')}
+    translationActions = ${Translation.translate('actions', '', [], 'Main', 'Gerdemann.GoogleIndex')}
+    translationSendToGoogle = ${Translation.translate('sendToGoogle', '', [], 'Main', 'Gerdemann.GoogleIndex')}
+    translationRemoveFromGoogle = ${Translation.translate('removeFromGoogle', '', [], 'Main', 'Gerdemann.GoogleIndex')}
+
+    // Rendering
+    renderer = afx`
+        <Gerdemann.GoogleIndex:Component.FlashMessages @if.flashMessagesAreAvailable={flashMessages} flashMessages={flashMessages} />
+
+        <table class="neos-table">
+            <thead>
+                <tr>
+                    <th class="">{props.translationTitle}</th>
+                    <th class="">{props.translationLink}</th>
+                    <th class="redirect-table__heading-actions">{props.translationActions}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <Neos.Fusion:Loop items={props.pages} itemName="page" iterator="iterator">
+                <tr class={'redirects-table__row' + (iterator.isOdd ? ' odd' : '')}>
+                    <td>
+                        {page.title}
+                    </td>
+                    <td>
+                        {page.link}
+                    </td>
+                    <td class="neos-action">
+                        <a href={page.updateAction} class="neos-button">
+                            <i class="fas fa-paper-plane"></i>&nbsp;&nbsp;&nbsp;{props.translationSendToGoogle}
+                        </a>
+                        <a href={page.deleteAction} class="neos-button neos-button-danger">
+                            <i class="fas fa-trash-alt"></i>&nbsp;&nbsp;&nbsp;{props.translationRemoveFromGoogle}
+                        </a>
+                    </td>
+                </tr>
+                </Neos.Fusion:Loop>
+            </tbody>
+        </table>
+        <div class="page-navigation" @if.hasPagination={Array.length(props.paginationLinks) > 0}>
+            <ul class="neos-fluid-widget-paginator">
+                <Neos.Fusion:Loop items={props.paginationLinks} itemName="paginationLink" iterator="iterator">
+                    <li class={paginationLink.current ? 'current' : false}>
+                        <Neos.Fusion:Tag tagName={paginationLink.current ? 'span' : 'a'} attributes.href={paginationLink.current ? false : paginationLink.uri}>
+                            {paginationLink.page}
+                        </Neos.Fusion:Tag>
+                    </li>
+                </Neos.Fusion:Loop>
+            </ul>
+        </div>
+    `
+}

@@ -1,0 +1,36 @@
+Gerdemann.GoogleIndex.Module.IndexController.index = Gerdemann.GoogleIndex:Page.List {
+    pages = Neos.Fusion:Map {
+        items = ${pages}
+        itemName = 'page'
+        itemRenderer = Neos.Fusion:DataStructure {
+            title = ${q(page).property('title')}
+            link = Neos.Neos:NodeUri {
+                node = ${page}
+                absolute = true
+            }
+            updateAction = Neos.Fusion:UriBuilder {
+                action = 'updateGoogle'
+                arguments {
+                    title = ${q(page).property('title')}
+                    uri = Neos.Neos:NodeUri {
+                        node = ${page}
+                        absolute = true
+                    }
+                }
+            }
+            deleteAction = Neos.Fusion:UriBuilder {
+                action = 'deleteGoogle'
+                arguments {
+                    title = ${q(page).property('title')}
+                    uri = Neos.Neos:NodeUri {
+                        node = ${page}
+                        absolute = true
+                    }
+                }
+            }
+            lastPublicationDateTime = ${Date.format(page.lastPublicationDateTime ? page.lastPublicationDateTime : page.lastModificationDateTime, 'Y-m-d H:i:s')}
+        }
+    }
+
+    paginationLinks = ${paginationLinks}
+}

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+    <file original="" product-name="Gerdemann.GoogleIndex" source-language="en" datatype="plaintext">
+        <body>
+            <trans-unit id="title" xml:space="preserve" approved="yes">
+				<source>Title</source>
+            </trans-unit>
+            <trans-unit id="link" xml:space="preserve" approved="yes">
+				<source>Link</source>
+            </trans-unit>
+            <trans-unit id="actions" xml:space="preserve" approved="yes">
+				<source>Actions</source>
+            </trans-unit>
+            <trans-unit id="sendToGoogle" xml:space="preserve" approved="yes">
+				<source>Send to Google</source>
+            </trans-unit>
+            <trans-unit id="removeFromGoogle" xml:space="preserve" approved="yes">
+				<source>Remove from Google</source>
+            </trans-unit>
+
+            <trans-unit id="successfully.updated" xml:space="preserve" approved="yes">
+				<source>Index request "{0}" successfully sent</source>
+            </trans-unit>
+            <trans-unit id="successfully.deleted" xml:space="preserve" approved="yes">
+				<source>Delete request "{0}" successfully sent</source>
+            </trans-unit>
+            <trans-unit id="failed.updated" xml:space="preserve" approved="yes">
+				<source>Index request "{0}" failed</source>
+            </trans-unit>
+            <trans-unit id="failed.deleted" xml:space="preserve" approved="yes">
+				<source>Delete request "{0}" failed</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
