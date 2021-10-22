@@ -2,6 +2,15 @@
     "name": "gerdemann/googleindex",
     "type": "neos-package",
     "description": "Send pages to google for indexing",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Michael Gerdemann",
+            "email": "michael@gerdemann.me",
+            "homepage": "https://www.gerdemann.me",
+            "role": "Developer"
+        }
+    ],
     "require": {
         "neos/neos": "^7.0",
         "neos/fusion": "^7.0",
